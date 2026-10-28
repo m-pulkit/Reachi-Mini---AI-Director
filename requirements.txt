@@ -1,0 +1,17 @@
+# Robot SDK (+ MuJoCo for Simulation Mode)
+reachy-mini[mujoco]>=1.13
+
+# Perception / I/O
+opencv-python>=4.9          # needs the GUI build (not -headless) for the preview window
+numpy>=2.0
+SpeechRecognition>=3.10
+PyAudio>=0.2.14             # microphone backend for SpeechRecognition
+pyttsx3>=2.98
+
+# Cognition
+pydantic>=2.7
+google-genai>=1.20          # VLM_PROVIDER=gemini
+anthropic>=0.40             # VLM_PROVIDER=anthropic
+
+# Convenience
+python-dotenv>=1.0
