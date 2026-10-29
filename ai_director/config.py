@@ -54,6 +54,9 @@ class RobotSettings:
     mode: str = field(default_factory=lambda: _env_str("REACHY_MODE", "auto").lower())
     host: str = field(default_factory=lambda: _env_str("REACHY_HOST", "reachy-mini.local"))
     connect_timeout_s: float = field(default_factory=lambda: _env_float("REACHY_CONNECT_TIMEOUT", 5.0))
+    # Simulator: run MuJoCo without its 3D viewer window (starts faster), keep it running after exit.
+    sim_headless: bool = field(default_factory=lambda: _env_bool("SIM_HEADLESS", False))
+    sim_keep_alive: bool = field(default_factory=lambda: _env_bool("SIM_KEEP_ALIVE", False))
     # Webcam index used when the robot/sim camera returns no frames (-1 disables).
     fallback_camera_index: int = field(default_factory=lambda: _env_int("FALLBACK_CAMERA_INDEX", 0))
     # Use Pollen's recorded emotion library (HF dataset) when available.

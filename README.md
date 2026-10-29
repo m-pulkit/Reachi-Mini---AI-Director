@@ -87,6 +87,19 @@ Robot motion never blocks the camera: motion and camera use separate locks, VLM 
 their own executor, and face-tracking ticks are skipped while an expressive move owns the head.
 A watchdog in the supervisor resets to IDLE if any state gets stuck.
 
+## Troubleshooting
+
+- **Red dot / "error occurred" on the dashboard (http://127.0.0.1:8000):** the simulator's
+  MuJoCo backend missed the daemon's 2-second start-up window. The app now launches the
+  simulator itself, detects this and restarts it (up to 3 tries). Simulator logs go to
+  `logs/daemon.log`. If it keeps failing, set `SIM_HEADLESS=true`.
+- **`cv2 has no attribute CascadeClassifier`:** you have OpenCV 5. Run
+  `pip install "opencv-python>=4.9,<5"`.
+- **R / C / Q keys:** press them in the terminal running `python main.py`, or in the
+  "AI Director" preview window. In PyCharm's Run tool window, enable *Emulate terminal in
+  output console* or use the Terminal tab.
+- **Python 3.10** is limited to `reachy-mini` 1.8.x. Python 3.11 or newer gets the latest SDK.
+
 ## Tuning notes
 
 - **Emotion moves** are plain keyframe tables in `hal.py` (`CHOREOGRAPHIES`). If "look down"

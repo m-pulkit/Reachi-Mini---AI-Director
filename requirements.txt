@@ -1,8 +1,8 @@
-# Robot SDK (+ MuJoCo for Simulation Mode)
-reachy-mini[mujoco]>=1.13
+# Robot SDK (+ MuJoCo for Simulation Mode). Python 3.11+ gets the latest SDK; 3.10 is capped at 1.8.x.
+reachy-mini[mujoco]>=1.8
 
 # Perception / I/O
-opencv-python>=4.9          # needs the GUI build (not -headless) for the preview window
+opencv-python>=4.9,<5       # GUI build (not -headless). OpenCV 5 removed the Haar face detector.
 numpy>=2.0
 SpeechRecognition>=3.10
 PyAudio>=0.2.14             # microphone backend for SpeechRecognition

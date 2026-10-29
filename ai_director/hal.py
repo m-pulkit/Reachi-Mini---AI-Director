@@ -4,12 +4,11 @@ The rest of the codebase only talks to `RobotHAL`. It never imports the SDK and 
 whether it is driving the physical robot or the MuJoCo simulator.
 
 Connection strategy (REACHY_MODE=auto):
-  1. ReachyMini(use_sim=False)                         -> physical robot (local or reachy-mini.local)
-  2. ReachyMini(spawn_daemon=True, use_sim=True)       -> spawns the built-in MuJoCo simulator
-  3. If neither works, a no-op "headless" backend so the app (webcam + TTS + VLM) still runs.
-
-Note on the SDK: `use_sim=True` only has an effect together with `spawn_daemon=True`
-(the SDK client talks to a daemon; the daemon is what runs MuJoCo).
+  1. A healthy simulator daemon already on localhost?  -> use it (simulation)
+  2. ReachyMini(use_sim=False)                         -> physical robot (local or reachy-mini.local)
+  3. Start `reachy-mini-daemon --sim` (see sim_daemon.py: waits for it, retries if MuJoCo
+     misses its 2 s start-up window), then ReachyMini(use_sim=True) on localhost -> simulation
+  4. If nothing works, a no-op "headless" backend so the app (webcam + TTS + VLM) still runs.
 """
 
 from __future__ import annotations
@@ -24,6 +23,7 @@ from typing import Any
 import numpy as np
 
 from .config import RobotSettings
+from .sim_daemon import SimDaemon, daemon_status
 
 log = logging.getLogger(__name__)
 
@@ -140,6 +140,7 @@ class RobotHAL:
         self._recorded_moves: Any = None
         self._recorded_index: dict[str, str] = {}
         self._cancel = threading.Event()
+        self._sim: SimDaemon | None = None
 
     # ------------------------------------------------------------------ lifecycle
     @property
@@ -154,7 +155,10 @@ class RobotHAL:
             return self._mode
 
         mode = self._s.mode
-        if mode in ("auto", "physical"):
+        existing = daemon_status()
+        existing_is_sim = bool(existing and existing.get("simulation_enabled"))
+
+        if mode in ("auto", "physical") and not (mode == "auto" and existing_is_sim):
             try:
                 log.info("Connecting to the physical Reachy Mini...")
                 self._mini = self._construct(use_sim=False, host=self._s.host, timeout=self._s.connect_timeout_s)
@@ -164,15 +168,17 @@ class RobotHAL:
                 if mode == "physical":
                     raise
         if self._mini is None and mode in ("auto", "sim"):
-            try:
-                log.info("Falling back to Simulation Mode (spawning MuJoCo daemon)...")
-                self._mini = self._construct(
-                    use_sim=True, spawn_daemon=True, connection_mode="localhost_only",
-                    timeout=max(self._s.connect_timeout_s, 20.0),
-                )
-                self._mode = "simulation"
-            except Exception as e:
-                log.error("Simulator failed to start: %s", e)
+            log.info("Falling back to Simulation Mode (MuJoCo)...")
+            self._sim = SimDaemon(headless=self._s.sim_headless)
+            if self._sim.ensure_running():
+                try:
+                    self._mini = self._construct(
+                        use_sim=True, spawn_daemon=False, connection_mode="localhost_only",
+                        localhost_only=True, timeout=max(self._s.connect_timeout_s, 10.0),
+                    )
+                    self._mode = "simulation"
+                except Exception as e:
+                    log.error("Simulator is running but the SDK could not connect: %s", e)
         if self._mini is None:
             log.error("No robot backend available. Running HEADLESS (webcam + voice only).")
             self._mode = "headless"
@@ -207,6 +213,8 @@ class RobotHAL:
             except Exception as e:
                 log.debug("ReachyMini close error: %s", e)
             self._mini = None
+        if self._sim is not None and not self._s.sim_keep_alive:
+            self._sim.stop()
         with self._camera_lock:
             if self._webcam is not None:
                 self._webcam.release()

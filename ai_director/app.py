@@ -14,10 +14,14 @@ and guarantees a clean shutdown on Ctrl+C.
 from __future__ import annotations
 
 import logging
+import os
 import queue
 import signal
+import sys
 import threading
 import time
+
+import numpy as np
 
 from .config import Settings
 from .hal import RobotHAL
@@ -57,10 +61,13 @@ class DirectorApp:
     def run(self) -> None:
         mode = self.hal.connect()
         print(f"\n  ALGORITHMIC AI DIRECTOR  |  robot: {mode.upper()}  |  brain: {self.s.brain.provider}\n"
-              f"  Say 'Reachy, rolling!' to start, 'Cut!' to stop."
-              f"{'  (Preview window: R = rolling, C = cut, Q = quit)' if self._preview_ok else ''}\n")
+              f"  Say 'Reachy, rolling!' to start, 'Cut!' to stop.\n"
+              f"  Keyboard: R = rolling, C = cut, Q = quit  (press them in THIS terminal"
+              f"{' or in the preview window' if self._preview_ok else ''})\n")
+        self.fsm.add_listener(self._on_state)
         for n in self.nodes:
             n.start()
+        threading.Thread(target=self._console_keys, name="console-keys", daemon=True).start()
 
         try:
             # Ctrl+C anywhere -> stop_event. Main thread stays responsive (short waits only).
@@ -109,8 +116,57 @@ class DirectorApp:
             log.error("Watchdog: stuck in %s for %.0fs, resetting to IDLE.", st.value, age)
             self.fsm.force_idle()
 
+    def _handle_key(self, key: str) -> None:
+        key = key.lower()
+        if key == "r":
+            if not self.audio.trigger_rolling():
+                print(f"  (can't start: state is {self.fsm.state.value})", flush=True)
+        elif key == "c":
+            if not self.audio.trigger_cut():
+                print(f"  (can't cut: state is {self.fsm.state.value})", flush=True)
+        elif key in ("q", "\x1b"):
+            self.stop_event.set()
+
+    def _console_keys(self) -> None:
+        """R / C / Q typed in the terminal window (works even without the preview window)."""
+        if os.name == "nt":
+            import msvcrt
+
+            while not self.stop_event.is_set():
+                if msvcrt.kbhit():
+                    ch = msvcrt.getwch()
+                    if ch not in ("\x00", "\xe0"):
+                        self._handle_key(ch)
+                else:
+                    self.stop_event.wait(0.05)
+        else:  # POSIX: type the letter then Enter
+            while not self.stop_event.is_set():
+                line = sys.stdin.readline()
+                if not line:
+                    return
+                if line.strip():
+                    self._handle_key(line.strip()[0])
+
+    def _on_state(self, old: SystemState, new: SystemState) -> None:
+        banners = {
+            SystemState.RECORDING: ("[REC] RECORDING  -  perform now, say 'Cut!' (or press C) to stop", 1200),
+            SystemState.PROCESSING: ("[...] PROCESSING  -  the Director is judging you", 800),
+            SystemState.IDLE: ("[ ] IDLE  -  say 'Reachy, rolling!' (or press R) for the next take", None),
+        }
+        if new in banners:
+            text, freq = banners[new]
+            print(f"\n>>> {text}\n", flush=True)
+            if freq and os.name == "nt":
+                import winsound
+
+                threading.Thread(target=winsound.Beep, args=(freq, 180), daemon=True).start()
+
     def _preview_tick(self) -> None:
         frame = self.vision.latest_frame()
+        if frame is None:  # keep the window (and its keyboard focus) alive without a camera
+            frame = np.zeros((360, 640, 3), dtype=np.uint8)
+            cv2.putText(frame, "NO CAMERA FRAMES", (150, 170), cv2.FONT_HERSHEY_SIMPLEX, 1.0,
+                        (0, 0, 255), 2, cv2.LINE_AA)
         if frame is not None:
             st = self.fsm.state
             colors = {SystemState.IDLE: (200, 200, 200), SystemState.RECORDING: (0, 0, 255),
@@ -135,11 +191,5 @@ class DirectorApp:
         except cv2.error:
             self._preview_ok = False
             return
-        if frame is None:
-            self.stop_event.wait(0.03)
-        if key in (ord("r"), ord("R")):
-            self.audio.trigger_rolling()
-        elif key in (ord("c"), ord("C")):
-            self.audio.trigger_cut()
-        elif key in (ord("q"), ord("Q"), 27):
-            self.stop_event.set()
+        if key != 255:
+            self._handle_key(chr(key))

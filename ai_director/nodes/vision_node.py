@@ -62,9 +62,18 @@ class VisionNode(BaseNode):
 
     # ------------------------------------------------------------------ lifecycle
     def setup(self) -> None:
-        path = cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
-        cascade = cv2.CascadeClassifier(path)
-        self._face_cascade = None if cascade.empty() else cascade
+        # Haar cascades were removed from the main package in OpenCV 5. Face tracking is a
+        # nice-to-have, so never let it take the camera down.
+        if not hasattr(cv2, "CascadeClassifier"):
+            self.log.warning("OpenCV %s has no CascadeClassifier: software face tracking disabled. "
+                             "Fix: pip install \"opencv-python>=4.9,<5\"", cv2.__version__)
+            return
+        try:
+            path = cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
+            cascade = cv2.CascadeClassifier(path)
+            self._face_cascade = None if cascade.empty() else cascade
+        except Exception as e:
+            self.log.warning("Face detector unavailable (%s): software face tracking disabled.", e)
 
     def teardown(self) -> None:
         self.hal.stop_face_tracking()

@@ -1,0 +1,321 @@
+
+===== 2026-10-29 01:50:42 D:\PycharmProjects\Reachi Mini - AI Director\.venv\Scripts\reachy-mini-daemon.exe --sim =====
+reachy_mini.daemon.daemon - INFO - Daemon version: 1.8.4
+'D:/PycharmProjects/Reachi Mini - AI Director/.venv/lib/site-packages/gstreamer_plugins_libs/lib/gio/modules\giolibproxy.dll': The specified module could not be found.
+Failed to load module: D:/PycharmProjects/Reachi Mini - AI Director/.venv/lib/site-packages/gstreamer_plugins_libs/lib/gio/modules\giolibproxy.dll
+0:00:36.664341300      12276      11844 ERROR           GST_REGISTRY gstregistrybinary.c:153:gst_registry_binary_cache_finish: Failed to write to cache file: Failed to create file “D:/PycharmProjects/Reachi Mini - AI Director/.venv/Temp/gstreamer-1.0/registry-win-amd64.bin;D:/PycharmProjects/Reachi Mini - AI Director/.venv/Temp/gstreamer-1.0/registry-win-amd64.bin.74C5X3”: Invalid argument
+0:00:38.364068500      12276      26788 ERROR      ndideviceprovider net\ndi\src\device_provider\imp.rs:76:<gstndi::device_provider::imp::DeviceProvider as gstreamer::subclass::device_provider::DeviceProviderImpl>::start:<ndideviceprovider0> Failed loading NDI SDK
+reachy_mini.media.device_detection - WARNING - No Reachy Mini Audio Source card found.
+reachy_mini.media.media_server - WARNING - No Reachy Mini audio card found, using default audio source.
+reachy_mini.media.media_server - INFO - No hardware AEC; enabled software echo cancellation.
+uvicorn.error - INFO - Started server process [12276]
+uvicorn.error - INFO - Waiting for application startup.
+reachy_mini.daemon.app.main - INFO - Dataset updater started (interval: 24.0h)
+reachy_mini.daemon.daemon - INFO - Daemon start parameters: sim=True, mockup_sim=False, serialport=auto, scene=empty, wake_up_on_start=True, check_collision=False, kinematics_engine=AnalyticalKinematics, headless=False, hardware_config_filepath=D:\PycharmProjects\Reachi Mini - AI Director\.venv\Lib\site-packages\reachy_mini\assets\config\hardware_config.yaml
+reachy_mini.daemon.daemon - INFO - Starting Reachy Mini daemon...
+reachy_mini.media.audio_control_utils - ERROR - No Reachy Mini Audio USB device found!
+reachy_mini.daemon.backend.abstract - INFO - Using AnalyticalKinematics kinematics engine
+
+===== 2026-10-29 01:51:47 D:\PycharmProjects\Reachi Mini - AI Director\.venv\Scripts\reachy-mini-daemon.exe --sim =====
+reachy_mini.daemon.daemon - INFO - Daemon version: 1.8.4
+'D:/PycharmProjects/Reachi Mini - AI Director/.venv/lib/site-packages/gstreamer_plugins_libs/lib/gio/modules\giolibproxy.dll': The specified module could not be found.
+Failed to load module: D:/PycharmProjects/Reachi Mini - AI Director/.venv/lib/site-packages/gstreamer_plugins_libs/lib/gio/modules\giolibproxy.dll
+0:00:10.460694600      12892      29620 ERROR           GST_REGISTRY gstregistrybinary.c:153:gst_registry_binary_cache_finish: Failed to write to cache file: Failed to create file “D:/PycharmProjects/Reachi Mini - AI Director/.venv/Temp/gstreamer-1.0/registry-win-amd64.bin;D:/PycharmProjects/Reachi Mini - AI Director/.venv/Temp/gstreamer-1.0/registry-win-amd64.bin.CV2EY3”: Invalid argument
+0:00:11.825320400      12892      16948 ERROR      ndideviceprovider net\ndi\src\device_provider\imp.rs:76:<gstndi::device_provider::imp::DeviceProvider as gstreamer::subclass::device_provider::DeviceProviderImpl>::start:<ndideviceprovider0> Failed loading NDI SDK
+reachy_mini.media.device_detection - WARNING - No Reachy Mini Audio Source card found.
+reachy_mini.media.media_server - WARNING - No Reachy Mini audio card found, using default audio source.
+reachy_mini.media.media_server - INFO - No hardware AEC; enabled software echo cancellation.
+uvicorn.error - INFO - Started server process [12892]
+uvicorn.error - INFO - Waiting for application startup.
+reachy_mini.daemon.app.main - INFO - Dataset updater started (interval: 24.0h)
+reachy_mini.daemon.daemon - INFO - Daemon start parameters: sim=True, mockup_sim=False, serialport=auto, scene=empty, wake_up_on_start=True, check_collision=False, kinematics_engine=AnalyticalKinematics, headless=False, hardware_config_filepath=D:\PycharmProjects\Reachi Mini - AI Director\.venv\Lib\site-packages\reachy_mini\assets\config\hardware_config.yaml
+reachy_mini.daemon.daemon - INFO - Starting Reachy Mini daemon...
+reachy_mini.media.audio_control_utils - ERROR - No Reachy Mini Audio USB device found!
+reachy_mini.daemon.backend.abstract - INFO - Using AnalyticalKinematics kinematics engine
+reachy_mini.daemon.daemon - ERROR - Backend is not ready after 2 seconds. Some error occurred.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+uvicorn.access - INFO - 127.0.0.1:59136 - "GET /api/daemon/status HTTP/1.1" 200
+reachy_mini.media.gstreamer_udp_camera - INFO - UDP sender started
+
+===== 2026-10-29 01:52:22 D:\PycharmProjects\Reachi Mini - AI Director\.venv\Scripts\reachy-mini-daemon.exe --sim =====
+reachy_mini.daemon.daemon - INFO - Daemon version: 1.8.4
+'D:/PycharmProjects/Reachi Mini - AI Director/.venv/lib/site-packages/gstreamer_plugins_libs/lib/gio/modules\giolibproxy.dll': The specified module could not be found.
+Failed to load module: D:/PycharmProjects/Reachi Mini - AI Director/.venv/lib/site-packages/gstreamer_plugins_libs/lib/gio/modules\giolibproxy.dll
+0:00:14.606687200      22688      21812 ERROR           GST_REGISTRY gstregistrybinary.c:153:gst_registry_binary_cache_finish: Failed to write to cache file: Failed to create file “D:/PycharmProjects/Reachi Mini - AI Director/.venv/Temp/gstreamer-1.0/registry-win-amd64.bin;D:/PycharmProjects/Reachi Mini - AI Director/.venv/Temp/gstreamer-1.0/registry-win-amd64.bin.W0A8X3”: Invalid argument
+0:00:15.582602400      22688      18320 ERROR      ndideviceprovider net\ndi\src\device_provider\imp.rs:76:<gstndi::device_provider::imp::DeviceProvider as gstreamer::subclass::device_provider::DeviceProviderImpl>::start:<ndideviceprovider0> Failed loading NDI SDK
+reachy_mini.media.device_detection - WARNING - No Reachy Mini Audio Source card found.
+reachy_mini.media.media_server - WARNING - No Reachy Mini audio card found, using default audio source.
+reachy_mini.media.media_server - INFO - No hardware AEC; enabled software echo cancellation.
+uvicorn.error - INFO - Started server process [22688]
+uvicorn.error - INFO - Waiting for application startup.
+reachy_mini.daemon.app.main - INFO - Dataset updater started (interval: 24.0h)
+reachy_mini.daemon.daemon - INFO - Daemon start parameters: sim=True, mockup_sim=False, serialport=auto, scene=empty, wake_up_on_start=True, check_collision=False, kinematics_engine=AnalyticalKinematics, headless=False, hardware_config_filepath=D:\PycharmProjects\Reachi Mini - AI Director\.venv\Lib\site-packages\reachy_mini\assets\config\hardware_config.yaml
+reachy_mini.daemon.daemon - INFO - Starting Reachy Mini daemon...
+reachy_mini.media.audio_control_utils - ERROR - No Reachy Mini Audio USB device found!
+reachy_mini.daemon.backend.abstract - INFO - Using AnalyticalKinematics kinematics engine
+reachy_mini.media.gstreamer_udp_camera - INFO - UDP sender started
+0:00:26.323602300      22688      28860 ERROR      ndideviceprovider net\ndi\src\device_provider\imp.rs:76:<gstndi::device_provider::imp::DeviceProvider as gstreamer::subclass::device_provider::DeviceProviderImpl>::start:<ndideviceprovider0> Failed loading NDI SDK
+reachy_mini.media.device_detection - WARNING - No Reachy Mini Audio Source card found.
+reachy_mini.media.media_server - WARNING - No Reachy Mini audio card found, using default audio source.
+reachy_mini.media.media_server - INFO - No hardware AEC; enabled software echo cancellation.
+reachy_mini.daemon.daemon - INFO - Starting central signaling relay...
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Starting relay service...
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Thread starting, creating event loop...
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Relay thread started: Thread-9 (_run_in_thread)
+reachy_mini.daemon.daemon - INFO - Central signaling relay started
+reachy_mini.daemon.daemon - INFO - Waking up Reachy Mini...
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] _run_loop started
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Starting connection attempts
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] _connect_and_relay() starting
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Attempting to connect to local websocket: ws://127.0.0.1:8443
+reachy_mini.media.media_server - INFO - opusenc tuned for discovery: inband-fec=True, packet-loss-percentage=20
+0:00:28.559244100      22688       9320 ERROR             webrtcsink net\webrtc\src\webrtcsink\imp.rs:1778:gstrswebrtc::webrtcsink::imp::BaseWebRTCSink::configure_congestion_control:<webrtcsink1> Bitrate handling is not supported yet for mfvp9enc
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local websocket connection established
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Waiting for welcome message from local websocket...
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local message handler task started
+[2m2026-10-29T00:53:09.910245Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m New WebSocket connection [3mthis_id[0m[2m=[0m33dd3d5d-1059-4ef8-923e-17460187f81d
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Connected to local GStreamer signaling server peer_id=33dd3d5d-1059-4ef8-923e-17460187f81d
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local WebRTC connection verified (welcome received)
+[2m2026-10-29T00:53:10.280566Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Text(Utf8Bytes(b"{\"type\": \"setPeerStatus\", \"roles\": [\"listener\"], \"meta\": {\"name\": \"central-relay\"}}")))
+[2m2026-10-29T00:53:10.309576Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::handlers[0m[2m:[0m registered as [Listener] [3mpeer_id[0m[2m=[0m33dd3d5d-1059-4ef8-923e-17460187f81d
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] heartbeat loop interval=5.0s
+reachy_mini.media.central_signaling_relay - WARNING - [Central Relay] State transition: connecting -> error | Authentication failed - token may be invalid
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Central SSE handler exited, will reconnect
+[2m2026-10-29T00:53:11.775075Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Close(Some(CloseFrame { code: Normal, reason: Utf8Bytes(b"") })))
+[2m2026-10-29T00:53:11.792757Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m connection closed: Some(CloseFrame { code: Normal, reason: Utf8Bytes(b"") }) [3mthis_id[0m[2m=[0m33dd3d5d-1059-4ef8-923e-17460187f81d
+[2m2026-10-29T00:53:11.895862Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::handlers[0m[2m:[0m removing peer [3mpeer_id[0m[2m=[0m33dd3d5d-1059-4ef8-923e-17460187f81d
+reachy_mini.media.media_server - INFO - Pipeline latency (live=True, min_latency=30000000, max_latency=1500000000)
+reachy_mini.media.device_detection - WARNING - No Reachy Mini Audio Sink card found.
+[2m2026-10-29T00:53:13.799327Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m New WebSocket connection [3mthis_id[0m[2m=[0ma2823e44-f8dd-4558-b689-db91d7da0337
+[2m2026-10-29T00:53:13.885292Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Text(Utf8Bytes(b"{\"type\":\"setPeerStatus\",\"roles\":[\"producer\"],\"meta\":{\"name\":\"reachymini\"},\"peerId\":\"a2823e44-f8dd-4558-b689-db91d7da0337\"}")))
+[2m2026-10-29T00:53:13.885392Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::handlers[0m[2m:[0m registered as [Producer] [3mpeer_id[0m[2m=[0ma2823e44-f8dd-4558-b689-db91d7da0337
+reachy_mini.daemon.daemon - INFO - Daemon started successfully.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+uvicorn.access - INFO - 127.0.0.1:49657 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+reachy_mini.utils.discovery - INFO - mDNS service registered: reachy_mini on port 8000
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] _connect_and_relay() starting
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Attempting to connect to local websocket: ws://127.0.0.1:8443
+[2m2026-10-29T00:53:16.968345Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m New WebSocket connection [3mthis_id[0m[2m=[0m3f8e71ac-745b-42b8-b7f7-e82eab20f021
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local websocket connection established
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Waiting for welcome message from local websocket...
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local message handler task started
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Connected to local GStreamer signaling server peer_id=3f8e71ac-745b-42b8-b7f7-e82eab20f021
+[2m2026-10-29T00:53:16.970205Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Text(Utf8Bytes(b"{\"type\": \"setPeerStatus\", \"roles\": [\"listener\"], \"meta\": {\"name\": \"central-relay\"}}")))
+[2m2026-10-29T00:53:16.970306Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::handlers[0m[2m:[0m registered as [Listener] [3mpeer_id[0m[2m=[0m3f8e71ac-745b-42b8-b7f7-e82eab20f021
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local WebRTC connection verified (welcome received)
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] heartbeat loop interval=5.0s
+uvicorn.error - INFO - 127.0.0.1:58023 - "WebSocket /api/move/ws/updates" [accepted]
+uvicorn.error - INFO - connection open
+reachy_mini.media.central_signaling_relay - WARNING - [Central Relay] State transition: connecting -> error | Authentication failed - token may be invalid
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Central SSE handler exited, will reconnect
+[2m2026-10-29T00:53:17.257188Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Close(Some(CloseFrame { code: Normal, reason: Utf8Bytes(b"") })))
+[2m2026-10-29T00:53:17.257255Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m connection closed: Some(CloseFrame { code: Normal, reason: Utf8Bytes(b"") }) [3mthis_id[0m[2m=[0m3f8e71ac-745b-42b8-b7f7-e82eab20f021
+[2m2026-10-29T00:53:17.257447Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::handlers[0m[2m:[0m removing peer [3mpeer_id[0m[2m=[0m3f8e71ac-745b-42b8-b7f7-e82eab20f021
+uvicorn.error - INFO - 127.0.0.1:58024 - "WebSocket /ws/sdk" [accepted]
+uvicorn.error - INFO - connection open
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+reachy_mini.media.media_server - WARNING - Warning: gst-core-error-quark: Can't record audio fast enough (13) ../gst-libs/gst/audio/gstaudiobasesrc.c(855): gst_audio_base_src_create (): /GstPipeline:reachymini_webrtc_sender/GstAutoAudioSrc:autoaudiosrc1/GstWasapi2Src:autoaudiosrc1-actual-src-wasapi:
+Dropped 24480 samples. This is most likely because downstream can't keep up and is consuming samples too slowly.
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] _connect_and_relay() starting
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Attempting to connect to local websocket: ws://127.0.0.1:8443
+[2m2026-10-29T00:53:28.062162Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m New WebSocket connection [3mthis_id[0m[2m=[0mbb804ec9-bb95-4621-9dff-8fcb5da592ac
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local websocket connection established
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Waiting for welcome message from local websocket...
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local message handler task started
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Connected to local GStreamer signaling server peer_id=bb804ec9-bb95-4621-9dff-8fcb5da592ac
+[2m2026-10-29T00:53:28.064100Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Text(Utf8Bytes(b"{\"type\": \"setPeerStatus\", \"roles\": [\"listener\"], \"meta\": {\"name\": \"central-relay\"}}")))
+[2m2026-10-29T00:53:28.064256Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::handlers[0m[2m:[0m registered as [Listener] [3mpeer_id[0m[2m=[0mbb804ec9-bb95-4621-9dff-8fcb5da592ac
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local WebRTC connection verified (welcome received)
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] heartbeat loop interval=5.0s
+reachy_mini.media.central_signaling_relay - WARNING - [Central Relay] State transition: connecting -> error | Authentication failed - token may be invalid
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Central SSE handler exited, will reconnect
+[2m2026-10-29T00:53:28.408602Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Close(Some(CloseFrame { code: Normal, reason: Utf8Bytes(b"") })))
+[2m2026-10-29T00:53:28.408672Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m connection closed: Some(CloseFrame { code: Normal, reason: Utf8Bytes(b"") }) [3mthis_id[0m[2m=[0mbb804ec9-bb95-4621-9dff-8fcb5da592ac
+[2m2026-10-29T00:53:28.409006Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::handlers[0m[2m:[0m removing peer [3mpeer_id[0m[2m=[0mbb804ec9-bb95-4621-9dff-8fcb5da592ac
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+reachy_mini.media.media_server - WARNING - Warning: gst-core-error-quark: Can't record audio fast enough (13) ../gst-libs/gst/audio/gstaudiobasesrc.c(855): gst_audio_base_src_create (): /GstPipeline:reachymini_webrtc_sender/GstAutoAudioSrc:autoaudiosrc1/GstWasapi2Src:autoaudiosrc1-actual-src-wasapi:
+Dropped 46560 samples. This is most likely because downstream can't keep up and is consuming samples too slowly.
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+[2m2026-10-29T00:53:43.867338Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Pong(b""))
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] _connect_and_relay() starting
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Attempting to connect to local websocket: ws://127.0.0.1:8443
+[2m2026-10-29T00:53:49.204554Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m New WebSocket connection [3mthis_id[0m[2m=[0mb7155dc9-e901-4e1b-a69e-5a281e68200a
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local websocket connection established
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Waiting for welcome message from local websocket...
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local message handler task started
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Connected to local GStreamer signaling server peer_id=b7155dc9-e901-4e1b-a69e-5a281e68200a
+[2m2026-10-29T00:53:49.207025Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Text(Utf8Bytes(b"{\"type\": \"setPeerStatus\", \"roles\": [\"listener\"], \"meta\": {\"name\": \"central-relay\"}}")))
+[2m2026-10-29T00:53:49.207158Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::handlers[0m[2m:[0m registered as [Listener] [3mpeer_id[0m[2m=[0mb7155dc9-e901-4e1b-a69e-5a281e68200a
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local WebRTC connection verified (welcome received)
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] heartbeat loop interval=5.0s
+reachy_mini.media.central_signaling_relay - WARNING - [Central Relay] State transition: connecting -> error | Authentication failed - token may be invalid
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Central SSE handler exited, will reconnect
+[2m2026-10-29T00:53:49.773146Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Close(Some(CloseFrame { code: Normal, reason: Utf8Bytes(b"") })))
+[2m2026-10-29T00:53:49.773209Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m connection closed: Some(CloseFrame { code: Normal, reason: Utf8Bytes(b"") }) [3mthis_id[0m[2m=[0mb7155dc9-e901-4e1b-a69e-5a281e68200a
+[2m2026-10-29T00:53:49.773386Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::handlers[0m[2m:[0m removing peer [3mpeer_id[0m[2m=[0mb7155dc9-e901-4e1b-a69e-5a281e68200a
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+[2m2026-10-29T00:54:13.871761Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Pong(b""))
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] _connect_and_relay() starting
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Attempting to connect to local websocket: ws://127.0.0.1:8443
+[2m2026-10-29T00:54:33.108406Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m New WebSocket connection [3mthis_id[0m[2m=[0m66af3e36-1ad0-4805-bc40-f430917a78ff
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local websocket connection established
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Waiting for welcome message from local websocket...
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local message handler task started
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Connected to local GStreamer signaling server peer_id=66af3e36-1ad0-4805-bc40-f430917a78ff
+[2m2026-10-29T00:54:33.109961Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Text(Utf8Bytes(b"{\"type\": \"setPeerStatus\", \"roles\": [\"listener\"], \"meta\": {\"name\": \"central-relay\"}}")))
+[2m2026-10-29T00:54:33.110070Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::handlers[0m[2m:[0m registered as [Listener] [3mpeer_id[0m[2m=[0m66af3e36-1ad0-4805-bc40-f430917a78ff
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local WebRTC connection verified (welcome received)
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] heartbeat loop interval=5.0s
+reachy_mini.media.central_signaling_relay - WARNING - [Central Relay] State transition: connecting -> error | Authentication failed - token may be invalid
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Central SSE handler exited, will reconnect
+[2m2026-10-29T00:54:33.437308Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Close(Some(CloseFrame { code: Normal, reason: Utf8Bytes(b"") })))
+[2m2026-10-29T00:54:33.437391Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m connection closed: Some(CloseFrame { code: Normal, reason: Utf8Bytes(b"") }) [3mthis_id[0m[2m=[0m66af3e36-1ad0-4805-bc40-f430917a78ff
+[2m2026-10-29T00:54:33.437570Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::handlers[0m[2m:[0m removing peer [3mpeer_id[0m[2m=[0m66af3e36-1ad0-4805-bc40-f430917a78ff
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+[2m2026-10-29T00:54:43.885074Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Pong(b""))
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+[2m2026-10-29T00:55:13.895374Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Pong(b""))
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] _connect_and_relay() starting
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Attempting to connect to local websocket: ws://127.0.0.1:8443
+[2m2026-10-29T00:55:36.018318Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m New WebSocket connection [3mthis_id[0m[2m=[0m5456b410-2592-4ef1-bdf2-0d6a8e8ec2bb
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local websocket connection established
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Waiting for welcome message from local websocket...
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local message handler task started
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Connected to local GStreamer signaling server peer_id=5456b410-2592-4ef1-bdf2-0d6a8e8ec2bb
+[2m2026-10-29T00:55:36.035559Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Text(Utf8Bytes(b"{\"type\": \"setPeerStatus\", \"roles\": [\"listener\"], \"meta\": {\"name\": \"central-relay\"}}")))
+[2m2026-10-29T00:55:36.035840Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::handlers[0m[2m:[0m registered as [Listener] [3mpeer_id[0m[2m=[0m5456b410-2592-4ef1-bdf2-0d6a8e8ec2bb
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Local WebRTC connection verified (welcome received)
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] heartbeat loop interval=5.0s
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+reachy_mini.media.central_signaling_relay - WARNING - [Central Relay] State transition: connecting -> error | Authentication failed - token may be invalid
+reachy_mini.media.central_signaling_relay - INFO - [Central Relay] Central SSE handler exited, will reconnect
+[2m2026-10-29T00:55:36.357283Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Close(Some(CloseFrame { code: Normal, reason: Utf8Bytes(b"") })))
+[2m2026-10-29T00:55:36.357358Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m connection closed: Some(CloseFrame { code: Normal, reason: Utf8Bytes(b"") }) [3mthis_id[0m[2m=[0m5456b410-2592-4ef1-bdf2-0d6a8e8ec2bb
+[2m2026-10-29T00:55:36.357564Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::handlers[0m[2m:[0m removing peer [3mpeer_id[0m[2m=[0m5456b410-2592-4ef1-bdf2-0d6a8e8ec2bb
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+[2m2026-10-29T00:55:43.928548Z[0m [32m INFO[0m ThreadId(01) [2mgst_plugin_webrtc_signalling::server[0m[2m:[0m Received message Ok(Pong(b""))
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/daemon/status HTTP/1.1" 200
+uvicorn.access - INFO - 127.0.0.1:58020 - "GET /api/state/full HTTP/1.1" 200

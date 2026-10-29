@@ -31,7 +31,8 @@ except ImportError:  # pragma: no cover
 
 # Speech engines routinely mis-hear "Reachy".
 _NAME = r"(?:reachy|reachie|ritchie|richie|reechy|reach me|ricky|rachey|peachy)"
-_ROLLING = re.compile(r"\b(?:rolling|roll camera)\b", re.I)
+_ROLLING = re.compile(r"\b(?:rolling|rollin|rowling|roll camera)\b", re.I)
+_CUT_SOUNDALIKE = re.compile(r"(?:and |ok |okay )?(?:cut|cuts|cat|kat|kut|cot|caught|cart|cud|cuss|cutt?)(?: it| that)?")
 _ROLLING_WITH_NAME = re.compile(rf"\b{_NAME}\W*(?:\w+\W+)?(?:rolling|roll)\b", re.I)
 # "Cut" must END the phrase (optionally "cut it", "and cut", "cut cut") or be a very short phrase,
 # so "I cut the onions" inside a cooking video doesn't end the take.
@@ -160,7 +161,14 @@ class AudioNode(BaseNode):
             if state is SystemState.IDLE and start < self.fsm.idle_since:
                 continue  # phrase was captured while the robot was still talking
             try:
-                text = self._recognizer.recognize_google(audio, language=self.cfg.language)
+                # show_all=True returns Google's alternative transcriptions too: "Cut!" is often
+                # the 2nd/3rd guess behind "cat"/"cup", so commands are checked against all of them.
+                raw = self._recognizer.recognize_google(audio, language=self.cfg.language, show_all=True)
+                raw = raw if isinstance(raw, dict) else {}
+                alts = [a["transcript"].strip() for a in raw.get("alternative", []) if a.get("transcript")]
+                if not alts:
+                    continue
+                text = alts[0]
             except sr.UnknownValueError:
                 continue
             except sr.RequestError as e:
@@ -169,25 +177,32 @@ class AudioNode(BaseNode):
             except Exception:
                 self.log.exception("Recognition failed")
                 continue
-            text = text.strip()
-            if text:
-                self.log.info("HEARD [%s] %r", state.value, text)
-                self._handle_text(text, start, end)
+            self.log.info("HEARD [%s] %r%s", state.value, text,
+                          f"  (alts: {alts[1:4]})" if len(alts) > 1 else "")
+            self._handle_text(text, start, end, alts)
 
-    def _handle_text(self, text: str, start: float, end: float) -> None:
+    def _handle_text(self, text: str, start: float, end: float, alts: list[str] | None = None) -> None:
+        candidates = [text] + [a for a in (alts or []) if a != text]
         state = self.fsm.state
         if state is SystemState.IDLE:
             pattern = _ROLLING_WITH_NAME if self.cfg.require_robot_name else _ROLLING
-            m = pattern.search(text)
-            if m:
-                self.trigger_rolling(leftover_text=text[m.end():])
+            for cand in candidates:
+                m = pattern.search(cand)
+                if m:
+                    self.trigger_rolling(leftover_text=cand[m.end():])
+                    return
             return
 
         if state is SystemState.RECORDING:
-            if _CUT_AT_END.search(text) or (len(text.split()) <= 3 and _CUT_ANY.search(text)):
-                last_cut = list(_CUT_ANY.finditer(text))[-1]
-                before = re.sub(r"\band\W*$", "", text[: last_cut.start()].rstrip(), flags=re.I)
-                self.trigger_cut(leftover_text=before, at=end)
+            for cand in candidates:
+                if _CUT_AT_END.search(cand) or (len(cand.split()) <= 3 and _CUT_ANY.search(cand)):
+                    last_cut = list(_CUT_ANY.finditer(cand))[-1]
+                    before = re.sub(r"\band\W*$", "", cand[: last_cut.start()].rstrip(), flags=re.I)
+                    self.trigger_cut(leftover_text=before, at=end)
+                    return
+            # A one/two-word phrase that merely SOUNDS like "cut" (said on its own) also ends the take.
+            if len(text.split()) <= 2 and _CUT_SOUNDALIKE.fullmatch(text.strip(" .!?").lower()):
+                self.trigger_cut(at=end)
                 return
             with self._cmd_lock:
                 if self.fsm.state is SystemState.RECORDING:
